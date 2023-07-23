@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><style>.con{
+    position: center;
+    background-size: cover;
+    width: 80%;
+    height: 90%;
+    background: radial-gradient(rgba(255,255,255,0.6));
+    box-shadow: 0 0 10px rgb(0, 0, 0,0.6);
+    padding: 52px;
+    margin-left: 70px;
+    border-radius: 20px;
+
+}
+
+.form_con{
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+ h2{
+    align-content: center;
+ }
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+ }
+ header {
+  background-color: #333;
+  color: #0d0d0d;
+  padding: 10px;
+ }
+ h1 {
+  margin: 0;
+ }
+ #shoeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+ }
+ .shoeCard {
+  border: 1px solid #e22828;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+ }
+ .shoeCard img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+ }
+ #cartContainer {
+  margin: 20px;
+ }
+ #totalPrice {
+  font-weight: bold;
+ } 
+ h2 {
+    font-display:default;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+   }</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack</title>
+    <link rel="stylesheet" href="feed.css">
+</head>
+<body>
+    <div class="con">
+        <form class="form_con" action="connect.php" method="POST">
+            <h2>CONTACT US</h2>
+          
+
+            <label for="user">Name</label>
+            <input type="text" name="name" id="name" required><br><br>
+    
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" required><br><br>
+    
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" required><br><br>
+    
+            <label for="rating">Rating</label>
+            <select name="rating" id="rating">
+                <option value="">Select a rating</option>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Very Good</option>
+                <option value="3">3 - Good</option>
+                <option value="2">2 - Fair</option>
+                <option value="1">1 - Poor</option>
+            </select>
+<br><br>
+            <input type="submit" name="submit" id="submit">
+           
+        </form>
+    </div>
+</body>
+</html>

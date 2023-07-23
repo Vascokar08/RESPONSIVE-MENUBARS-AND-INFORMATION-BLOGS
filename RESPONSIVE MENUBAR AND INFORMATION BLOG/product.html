@@ -1,0 +1,110 @@
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Online Shoe Store</title>
+
+ <style>
+ 
+    body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+    }
+    header {
+     background-color: #333;
+     color: #0d0d0d;
+     padding: 10px;
+    }
+    h1 {
+     margin: 0;
+    }
+    #shoeContainer {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     padding: 20px;
+    }
+    .shoeCard {
+     border: 1px solid #e22828;
+     border-radius: 5px;
+     padding: 10px;
+     text-align: center;
+     margin-bottom: 20px;
+    }
+    .shoeCard img {
+     width: 200px;
+     height: 200px;
+     object-fit: cover;
+    }
+    #cartContainer {
+     margin: 20px;
+    }
+    #totalPrice {
+     font-weight: bold;
+    }</style>
+<body>
+ <header>
+ <h1><b>Online Shoe Store</b></h1>
+ <h2>Mens shoes</h2>
+ </header>
+ <main>
+ <div id="shoeContainer">
+ <div class="shoeCard">
+ <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/An_Adidas_shoe.jpg" 
+width="200" height="200" alt="Shoe 1">
+ <h3>Shoe 1</h3>
+ <p>RS.5909.99</p>
+ <button onclick="addToCart('Shoe 1', 5909.99)">Add to Cart</button>
+ </div>
+ <div class="shoeCard">
+ <img src="https://cdn.zelenshoes.com/images/products/large/SKH12756CCCL.jpg" width="200" 
+height="200" alt="Shoe 2">
+ <h3>Shoe 2</h3>
+ <p>RS.2379.99</p>
+ <button onclick="addToCart('Shoe 2', 2379.99)">Add to Cart</button>
+</div>
+ <div class="shoeCard">
+ <img 
+src="https://tse2.mm.bing.net/th?id=OIP.6fm9ybUCtyEfWLxV2CAoagHaHa&pid=Api&P=0&h=180" 
+width="200" height="200" alt="Shoe 3 ">
+ <h3>Shoe 3</h3>
+ <p>RS.1099.99</p>
+ <button onclick="addToCart('Shoe 3', 1099.99)">Add to Cart</button>
+ </div>
+ <div class="shoeCard">
+ <img src="https://tse2.mm.bing.net/th?id=OIP.JhyABIY_sQdIgbGUtJg8wHaEm&pid=Api&P=0&h=180" width="200" height="200" alt="Shoe 4">
+ <h3>Shoe 4</h3>
+ <p>RS.1079.99</p>
+ <button onclick="addToCart('Shoe 4', 1079.99)">Add to Cart</button>
+ </div>
+ </div>
+ <div id="cartContainer">
+ <h2>Shopping Cart</h2>
+ <ul id="cartItems"></ul>
+ <p id="totalPrice">Total Price: RS 0.00</p>
+ </div>
+ </main>
+ <script >
+let cartItems = [];
+let totalPrice = 0;
+function addToCart(itemName, price) {
+ cartItems.push(itemName);
+ totalPrice += price;
+ updateCart();
+}
+function updateCart() {
+ const cartItemsElement = document.getElementById("cartItems");
+ const totalPriceElement = document.getElementById("totalPrice");
+ cartItemsElement.innerHTML = "";
+ cartItems.forEach(item => {
+ const li = document.createElement("li");
+ li.textContent = item;
+ cartItemsElement.appendChild(li);
+ });
+ totalPriceElement.textContent = "Total Price: RS." + totalPrice.toFixed(2);
+}
+ </script>
+</body>
+</html>
+
